@@ -3,7 +3,8 @@ import type { PropType } from 'vue'
 import { SchemaTypes } from './types'
 // import StringField from './fields/StringField'
 import StringField from './fields/StringField.vue'
-import NumberField from './fields/NumberField'
+// import NumberField from './fields/NumberField'
+import NumberField from './fields/NumberField.vue'
 // 这个组件的作用是根据schema的类型不同，交给渲染schema的工作交给不同组件来做
 import { FieldPropsDefine } from './types'
 
@@ -33,7 +34,6 @@ export default defineComponent({
         default:
           console.warn('type必传')
       }
-
       return <Component {...props} />
     }
   }

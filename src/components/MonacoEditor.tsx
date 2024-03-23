@@ -9,9 +9,14 @@ import {
 } from 'vue'
 
 import * as Monaco from 'monaco-editor'
+import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker'
+import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker'
+import cssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker'
+import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker'
+import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker'
+import { createUseStyles } from 'vue-jss'
 
 import type { PropType, Ref } from 'vue'
-import { createUseStyles } from 'vue-jss'
 
 const useStyles = createUseStyles({
   container: {
@@ -29,6 +34,29 @@ const useStyles = createUseStyles({
     flexGrow: 1
   }
 })
+
+// 在初始化之前，先设置MonacoEnvironment,
+// TODO:将来可以写为一个vite插件
+self.MonacoEnvironment = {
+  getWorker(_, label) {
+    if (label === 'json') {
+      return new jsonWorker()
+    }
+
+    if (label === 'css' || label === 'scss' || label === 'less') {
+      return new cssWorker()
+    }
+
+    if (label === 'html' || label === 'handlebars' || label === 'razor') {
+      return new htmlWorker()
+    }
+
+    if (label === 'typescript' || label === 'javascript') {
+      return new tsWorker()
+    }
+    return new editorWorker()
+  }
+}
 
 export default defineComponent({
   props: {
@@ -48,6 +76,7 @@ export default defineComponent({
     }
   },
   setup(props) {
+    // console.log(self)
     // must be shallowRef, if not, editor.getValue() won't work
     const editorRef = shallowRef()
 

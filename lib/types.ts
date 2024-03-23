@@ -47,5 +47,5 @@ export const FieldPropsDefine = {
 export interface FieldProps {
   schema: Schema
   value: any
-  onChange: (v: string) => void
+  onChange: (v: any) => void
 }
