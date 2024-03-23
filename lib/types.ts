@@ -68,11 +68,11 @@ export const FieldPropsDefine = {
   },
   errorSchema: {
     type: Object as PropType<ErrorSchema>,
-    required: true
+    required: false
   },
   uiSchema: {
     type: Object as PropType<UISchema>,
-    required: true
+    required: false
   }
 } as const
 

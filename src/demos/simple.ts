@@ -2,7 +2,7 @@ export default {
   name: 'Simple',
   schema: {
     description: '简单示例',
-    type: 'string',
+    type: 'object',
     required: ['firstName', 'lastName'],
     properties: {
       firstName: {
