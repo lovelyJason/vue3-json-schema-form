@@ -23,6 +23,7 @@ export default defineComponent({
     }
     return () => {
       const { schema, value } = props
+      console.log(value)
       return <SchemaItem schema={schema} value={value} onChange={onChange} />
     }
   }

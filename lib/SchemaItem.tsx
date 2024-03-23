@@ -1,27 +1,18 @@
 import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
 import { SchemaTypes } from './types'
-import StringField from './fields/StringField'
+// import StringField from './fields/StringField'
+import StringField from './fields/StringField.vue'
 import NumberField from './fields/NumberField'
 // 这个组件的作用是根据schema的类型不同，交给渲染schema的工作交给不同组件来做
+import { FieldPropsDefine } from './types'
 
 export default defineComponent({
   name: 'SchemaItem',
-  props: {
-    schema: {
-      type: Object as PropType<Schema>,
-      required: true
-    },
-    value: {
-      required: true
-    },
-    onChange: {
-      type: Function as PropType<(v: any) => void>,
-      required: true
-    }
-  },
+  props: FieldPropsDefine,
   setup(props, ctx) {
     return () => {
+      console.log(props)
       const { schema } = props
       const type = schema.type
       let Component: any
@@ -43,7 +34,7 @@ export default defineComponent({
           console.warn('type必传')
       }
 
-      return <Component />
+      return <Component {...props} />
     }
   }
 })
