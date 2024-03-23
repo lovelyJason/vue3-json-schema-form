@@ -16,8 +16,13 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/json-schema-merge-allof": "^0.6.5",
+    "@types/lodash-es": "^4.17.12",
+    "json-schema-merge-allof": "^0.8.1",
+    "jsonpointer": "^5.0.1",
     "jss": "^10.10.0",
     "jss-preset-default": "^10.10.0",
+    "lodash-es": "^4.17.21",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
