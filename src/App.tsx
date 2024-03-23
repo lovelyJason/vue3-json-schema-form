@@ -1,6 +1,7 @@
 import { createApp, defineComponent, h, reactive, ref, watchEffect } from 'vue'
 import MonacoEditor from './components/MonacoEditor'
 import { createUseStyles } from 'vue-jss'
+import SchemaForm from '../lib'
 
 import demos from './demos'
 
@@ -134,7 +135,7 @@ export default defineComponent({
       return (
         <div class={classes.container}>
           <div class={classes.menu}>
-            <h1>hello JSON Schema Form</h1>
+            <h1>hello JSON Schema Form by Jasonhuang</h1>
             <div>
               {demos.map((demo, index) => (
                 <button
@@ -169,7 +170,9 @@ export default defineComponent({
                 />
               </div>
             </div>
-            <div class={classes.form}>11</div>
+            <div class={classes.form}>
+              <SchemaForm schema={demo.schema} onChange={onChange} value={demo.data} />
+            </div>
           </div>
         </div>
       )

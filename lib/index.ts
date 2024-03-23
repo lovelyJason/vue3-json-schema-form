@@ -1,1 +1,3 @@
-// 这里的代码将来会打包发布出去给用户使用
+import SchemaForm from './SchemaForm'
+
+export default SchemaForm
