@@ -2,7 +2,7 @@ import { defineComponent, type PropType } from 'vue'
 import { FieldPropsDefine } from '../types'
 import { useVJSFContext } from '../context'
 import { createUseStyles } from 'vue-jss'
-import SelectionWidget from '../widgets/Selection'
+// import SelectionWidget from '../widgets/Selection'
 
 import type { Schema } from '../types'
 
@@ -150,6 +150,7 @@ export default defineComponent({
     }
 
     return () => {
+      const SelectionWidget = context.theme.widgets.SelectionWidget
       const { schema, rootSchema, value } = props
       console.log('render', value)
 
