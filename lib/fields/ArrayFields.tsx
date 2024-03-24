@@ -2,6 +2,7 @@ import { defineComponent, type PropType } from 'vue'
 import { FieldPropsDefine } from '../types'
 import { useVJSFContext } from '../context'
 import { createUseStyles } from 'vue-jss'
+import SelectionWidget from '../widgets/Selection'
 
 import type { Schema } from '../types'
 
@@ -111,7 +112,7 @@ export default defineComponent({
       const { value } = props
       const arr = Array.isArray(value) ? value : []
 
-      arr[index] = v
+      arr[index] = v // 这里搞错了value循环递归了
       props.onChange(arr)
     }
 
@@ -185,6 +186,15 @@ export default defineComponent({
             </ArrayItemWrapper>
           )
         })
+      } else {
+        const options = (schema as any).items.enum.map((item: any) => {
+          return {
+            key: item,
+            value: item
+          }
+        })
+        // 直接变化整个数组
+        return <SelectionWidget value={props.value} options={options} onChange={props.onChange} />
       }
     }
   }

@@ -32,6 +32,13 @@ export default {
         items: {
           type: 'string'
         }
+      },
+      sigleTypeArray2: {
+        type: 'array',
+        items: {
+          type: 'string',
+          enum: ['123', '456', '789']
+        }
       }
     }
   },
