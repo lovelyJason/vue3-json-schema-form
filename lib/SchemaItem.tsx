@@ -5,6 +5,7 @@ import StringField from './fields/StringField.vue'
 // import NumberField from './fields/NumberField'
 import NumberField from './fields/NumberField.vue'
 import ObjectField from './fields/ObjectField'
+import ArrayFields from './fields/ArrayFields'
 // 这个组件的作用是根据schema的类型不同，交给渲染schema的工作交给不同组件来做
 import { FieldPropsDefine } from './types'
 import { retrieveSchema } from './utils'
@@ -40,6 +41,11 @@ export default defineComponent({
         case SchemaTypes.OBJECT:
           {
             Component = ObjectField
+          }
+          break
+        case SchemaTypes.ARRAY:
+          {
+            Component = ArrayFields
           }
           break
 

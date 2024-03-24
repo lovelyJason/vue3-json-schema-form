@@ -8,6 +8,7 @@ import demos from './demos'
 import type { Ref } from 'vue'
 
 function toJson(data: any) {
+  console.log('tojson,', data)
   return JSON.stringify(data, null, 2)
 }
 
