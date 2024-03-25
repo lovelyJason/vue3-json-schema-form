@@ -3,6 +3,7 @@ import { FieldPropsDefine } from '../types'
 import { useVJSFContext } from '../context'
 import { createUseStyles } from 'vue-jss'
 // import SelectionWidget from '../widgets/Selection'
+import { getWidget } from '../theme'
 
 import type { Schema } from '../types'
 
@@ -148,6 +149,8 @@ export default defineComponent({
       const item = arr.splice(index, 1)
       arr.splice(index + 1, 0, item[0])
     }
+
+    const SelectionWidgetRef = getWidget('selection')
 
     return () => {
       const SelectionWidget = context.theme.widgets.SelectionWidget

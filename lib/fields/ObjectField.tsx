@@ -12,6 +12,7 @@ export default defineComponent({
   name: 'ObjectField',
   props: FieldPropsDefine,
   setup(props, ctx) {
+    // TODO:改为useVJSF
     const context: { SchemaItem: SchemaItemDefine } | undefined = inject(SchemaFormContextKey)
     if (!context) {
       throw Error('必须包裹在schemaForm中')
