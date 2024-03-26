@@ -14,7 +14,7 @@ const ThemeProvider = defineComponent({
   setup(props, ctx) {
     const context = computed(() => props.theme)
     provide(THEME_PROVIDER_KEY, context)
-    return () => null
+    return () => ctx.slots.default && ctx.slots.default()
   }
 })
 

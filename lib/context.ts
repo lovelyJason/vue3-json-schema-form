@@ -6,7 +6,7 @@ export const SchemaFormContextKey = Symbol()
 export function useVJSFContext() {
   const context:
     | {
-        theme: Theme
+        // theme: Theme
         SchemaItem: CommonFieldType
         formatMapRef: Ref<{ [key: string]: CommonWidgetDefine }>
         transformSchemaRef: Ref<(schema: Schema) => Schema>

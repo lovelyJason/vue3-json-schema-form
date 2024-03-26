@@ -112,8 +112,8 @@ export interface Theme {
   // 将来会传入这些主题选项
   widgets: {
     SelectionWidget: SelectionWidgetDefine
-    // TextWidget: CommonWidgetDefine
-    // NumberWidget: CommonWidgetDefine
+    TextWidget: CommonWidgetDefine
+    NumberWidget: CommonWidgetDefine
   }
 }
 

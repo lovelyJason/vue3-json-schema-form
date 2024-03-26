@@ -16,16 +16,16 @@ export default defineComponent({
     onChange: {
       type: Function as PropType<(v: any) => void>,
       required: true
-    },
-    theme: {
-      type: Object as PropType<Theme>,
-      required: true
     }
+    // theme: {
+    //   type: Object as PropType<Theme>,
+    //   required: true
+    // }
   },
   setup(props, ctx) {
     const context = {
-      SchemaItem,
-      theme: props.theme
+      SchemaItem
+      // theme: props.theme
     }
     provide(SchemaFormContextKey, context)
 

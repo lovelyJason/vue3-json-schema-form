@@ -27,12 +27,12 @@ export default {
       //     }
       //   ]
       // },
-      sigleTypeArray: {
-        type: 'array',
-        items: {
-          type: 'string'
-        }
-      },
+      // sigleTypeArray: {
+      //   type: 'array',
+      //   items: {
+      //     type: 'string'
+      //   }
+      // },
       sigleTypeArray2: {
         type: 'array',
         items: {
@@ -61,8 +61,8 @@ export default {
     lastName: 'Huang',
     age: 18,
     bio: 'I am king',
-    password: 'none',
+    password: 'none'
     // staticArray: ['3', 2],
-    sigleTypeArray: ['aaa', 'bbb']
+    // sigleTypeArray: ['aaa', 'bbb']
   }
 }

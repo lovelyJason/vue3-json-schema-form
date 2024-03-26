@@ -150,12 +150,13 @@ export default defineComponent({
       arr.splice(index + 1, 0, item[0])
     }
 
-    const SelectionWidgetRef = getWidget('selection')
+    const SelectionWidgetRef = getWidget('SelectionWidget')
 
     return () => {
-      const SelectionWidget = context.theme.widgets.SelectionWidget
+      console.log(SelectionWidgetRef.value)
+      const SelectionWidget = SelectionWidgetRef.value
+      // const SelectionWidget = context.theme.widgets.SelectionWidget
       const { schema, rootSchema, value } = props
-      console.log('render', value)
 
       const SchemaItem = context.SchemaItem
 
